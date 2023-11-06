@@ -1,44 +1,104 @@
+'use client'
+import { validateEmail, validatePassword } from '@/lib/utils'
+import { Button } from '@nextui-org/button'
+import { Input } from '@nextui-org/react'
+import { signIn } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
+import { toast } from 'sonner'
+import { EyeSlashFilledIcon } from './icons/EyeSlashFilled'
+import { EyeFilledIcon } from './icons/EyeFilledIcon'
+
 export default function Login() {
+  const [isVisible, setIsVisible] = useState(false)
+  const router = useRouter()
+
+  const toggleVisibility = () => setIsVisible(!isVisible)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const formData = new FormData(e.currentTarget)
+    const { email, password } = Object.fromEntries(formData)
+
+    if (!validateEmail(email as string)) {
+      return toast.error('El correo electrónico no es válido')
+    }
+
+    if (!validatePassword(password as string)) {
+      return toast.error(
+        'La contraseña debe contener al menos 8 caracteres, una mayúscula, una minúscula y un número'
+      )
+    }
+
+    try {
+      const responseNextAuth = await signIn('credentials', {
+        email,
+        password,
+        redirect: false,
+      })
+
+      if (responseNextAuth?.error) {
+        toast.error(responseNextAuth.error)
+        return
+      }
+
+      router.push('/home')
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
-    <div className="">
-      <div className="w-[400px] rounded-lg shadow-lg bg-zinc-800 p-6 space-y-6">
-        <h1 className="text-3xl font-bold text-center text-white">
+    <section className="w-[400px] rounded-lg shadow-lg bg-zinc-800 p-6 space-y-6">
+      <h1 className="text-3xl font-bold text-center text-white">
+        Iniciar sesión
+      </h1>
+      <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
+        <Input
+          isClearable
+          type="email"
+          label="Correo electrónico"
+          variant="bordered"
+          name="email"
+          isRequired
+          placeholder="Ingrese su correo electrónico"
+          defaultValue=""
+          onClear={() => console.log('input cleared')}
+          className="w-ful"
+        />
+        <Input
+          label="Contraseña"
+          isRequired
+          variant="bordered"
+          name="password"
+          placeholder="Ingrese su contraseña"
+          endContent={
+            <button
+              className="focus:outline-none"
+              type="button"
+              onClick={toggleVisibility}
+            >
+              {isVisible ? (
+                <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+              ) : (
+                <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+              )}
+            </button>
+          }
+          type={isVisible ? 'text' : 'password'}
+          className="w-ful"
+        />
+        <Button className="w-full" color="primary" type="submit">
           Iniciar sesión
-        </h1>
-        <div className="space-y-4">
-          <div className="space-y-2">
-            <label
-              htmlFor="email"
-              className="text-sm font-medium leading-none text-white/80"
-            >
-              Correo electrónico
-            </label>
-            <input
-              id="email"
-              required
-              type="email"
-              className="h-10 w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm focus:ring-2 focus:ring-offset-0 text-white placeholder:text-white/80"
-            />
-          </div>
-          <div className="space-y-2">
-            <label
-              htmlFor="password"
-              className="text-sm font-medium leading-none text-white/80"
-            >
-              Contraseña
-            </label>
-            <input
-              id="password"
-              required
-              type="password"
-              className="h-10 w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm focus:ring-2 focus:ring-offset-0 text-white placeholder:text-white/80"
-            />
-          </div>
-          <button className="w-full bg-blue-600 text-white rounded-md py-2">
-            Iniciar Sesión
-          </button>
-        </div>
-      </div>
-    </div>
+        </Button>
+      </form>
+      <p className="text-white text-sm text-center">
+        ¿Nuevo en Checking?{' '}
+        <a href="/auth/signup" className="hover:underline text-primary-500">
+          Crear una cuenta
+        </a>
+      </p>
+    </section>
   )
 }
