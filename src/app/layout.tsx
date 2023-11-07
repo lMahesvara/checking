@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { Providers } from './providers'
+import SessionAuthProvider from '@/context/SessionAuthProvider'
+import { Toaster } from 'sonner'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +19,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + ' bg-zinc-100'}>{children}</body>
+      <body className={inter.className + ' bg-zinc-900 dark'}>
+        <SessionAuthProvider>
+          <Providers>{children}</Providers>
+        </SessionAuthProvider>
+        <Toaster richColors position="top-center" />
+      </body>
     </html>
   )
 }
