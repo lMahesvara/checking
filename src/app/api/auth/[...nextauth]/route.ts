@@ -1,11 +1,10 @@
 import { login } from '@/services/api'
-import NextAuth from 'next-auth'
+import NextAuth, { AuthOptions } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 
-const handler = NextAuth({
+export const authOptions: AuthOptions = {
   providers: [
     CredentialsProvider({
-      // The name to display on the sign in form (e.g. "Sign in with...")
       name: 'Credentials',
       credentials: {
         email: { label: 'email', type: 'email', placeholder: 'test@test.test' },
@@ -37,6 +36,8 @@ const handler = NextAuth({
   pages: {
     signIn: '/auth/login',
   },
-})
+}
+
+const handler = NextAuth(authOptions)
 
 export { handler as GET, handler as POST }
