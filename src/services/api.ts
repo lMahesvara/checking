@@ -4,7 +4,7 @@ const API_URL = process.env.API_URL
 
 export const login = async (email: string, password: string): Promise<any> => {
   try {
-    const response = await axios.post(`${API_URL}/login`, {
+    const response = await axios.post(`${API_URL}/user/login`, {
       email,
       password,
     })
