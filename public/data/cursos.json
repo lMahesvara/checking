@@ -1,0 +1,32 @@
+[
+  {
+    "_id": 1,
+    "name": "Métodos Ágiles de Desarrollo de Software",
+    "color": "primary"
+  },
+  {
+    "_id": 2,
+    "name": "Calidad de Software",
+    "color": "secondary"
+  },
+  {
+    "_id": 3,
+    "name": "Implementación de Prototipos",
+    "color": "success"
+  },
+  {
+    "_id": 4,
+    "name": "Sistemas para el Desarrollo Organizacional",
+    "color": "warning"
+  },
+  {
+    "_id": 5,
+    "name": "Ciencia de Datos",
+    "color": "danger"
+  },
+  {
+    "_id": 6,
+    "name": "Tópicos Web Emergentes",
+    "color": "default"
+  }
+]
