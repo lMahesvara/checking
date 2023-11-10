@@ -4,16 +4,12 @@ import { Button } from '@nextui-org/button'
 import { Input } from '@nextui-org/react'
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
 import { toast } from 'sonner'
-import { EyeSlashFilledIcon } from './icons/EyeSlashFilled'
-import { EyeFilledIcon } from './icons/EyeFilledIcon'
+import PasswordInput from './password-input'
+
 
 export default function Login() {
-  const [isVisible, setIsVisible] = useState(false)
   const router = useRouter()
-
-  const toggleVisibility = () => setIsVisible(!isVisible)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -67,28 +63,7 @@ export default function Login() {
           onClear={() => console.log('input cleared')}
           className="w-ful"
         />
-        <Input
-          label="Contraseña"
-          isRequired
-          variant="bordered"
-          name="password"
-          placeholder="Ingrese su contraseña"
-          endContent={
-            <button
-              className="focus:outline-none"
-              type="button"
-              onClick={toggleVisibility}
-            >
-              {isVisible ? (
-                <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-              ) : (
-                <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-              )}
-            </button>
-          }
-          type={isVisible ? 'text' : 'password'}
-          className="w-ful"
-        />
+        <PasswordInput />
         <Button className="w-full" color="primary" type="submit">
           Iniciar sesión
         </Button>
