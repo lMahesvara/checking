@@ -22,7 +22,7 @@ export default function Navbar() {
     <NavbarNUI
       onMenuOpenChange={setIsMenuOpen}
       classNames={{
-        base: 'bg-transparent border-b-2 border-gray-500',
+        base: 'bg-zinc-900 border-b-2 border-gray-500',
       }}
       maxWidth="xl"
       isBlurred={false}
