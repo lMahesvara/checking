@@ -1,31 +1,150 @@
 [
   {
-    "_id": 1,
+    "_id": "1",
     "name": "Métodos Ágiles de Desarrollo de Software",
-    "color": "primary"
+    "color": "primary",
+    "maestro": "6549e19eee7d7b548cbc6e90",
+    "alumnos": [
+      "Erick Bernal Amparano",
+      "Jesus Alejandro Ramirez Cota",
+      "Antonio de Jesus Gonzalez Pineda",
+      "Marco Antonio Hernandez Peña",
+      "Jorge Luis Rivas Vazquez",
+      "Roberto Carlos Reyes Fernandez"
+    ],
+    "unidades": [
+      {
+        "_id": "a0a0a0a0-8015-11ee-b962-0242ac120002",
+        "name": "Unidad 1"
+      },
+      {
+        "_id": "a0a0a0a1-8015-11ee-b962-0242ac120242",
+        "name": "Unidad 2"
+      },
+      {
+        "_id": "a0a0a0a2-8015-11ee-b962-0242ac121322",
+        "name": "Unidad 3"
+      }
+    ],
+    "asistencias": [
+      {
+        "_id": "78c54d26-8015-11ee-b962-0242ac120002",
+        "fecha": "2019-02-01",
+        "unidad": "a0a0a0a0-8015-11ee-b962-0242ac120002",
+        "alumnos": [
+          {
+            "alumno": "Erick Bernal Amparano",
+            "asistencia": true
+          },
+          {
+            "alumno": "Jesus Alejandro Ramirez Cota",
+            "asistencia": true
+          },
+          {
+            "alumno": "Antonio de Jesus Gonzalez Pineda",
+            "asistencia": true
+          },
+          {
+            "alumno": "Marco Antonio Hernandez Peña",
+            "asistencia": true
+          },
+          {
+            "alumno": "Jorge Luis Rivas Vazquez",
+            "asistencia": true
+          },
+          {
+            "alumno": "Roberto Carlos Reyes Fernandez",
+            "asistencia": true
+          }
+        ]
+      },
+      {
+        "_id": "8aff0c16-8015-11ee-b962-0242ac120002",
+        "fecha": "2019-02-08",
+        "unidad": "a0a0a0a0-8015-11ee-b962-0242ac120002",
+        "alumnos": [
+          {
+            "alumno": "Erick Bernal Amparano",
+            "asistencia": true
+          },
+          {
+            "alumno": "Jesus Alejandro Ramirez Cota",
+            "asistencia": true
+          },
+          {
+            "alumno": "Antonio de Jesus Gonzalez Pineda",
+            "asistencia": true
+          },
+          {
+            "alumno": "Marco Antonio Hernandez Peña",
+            "asistencia": true
+          },
+          {
+            "alumno": "Jorge Luis Rivas Vazquez",
+            "asistencia": true
+          },
+          {
+            "alumno": "Roberto Carlos Reyes Fernandez",
+            "asistencia": true
+          }
+        ]
+      },
+      {
+        "_id": "8aff0f0e-8015-11ee-b962-0242ac120002",
+        "fecha": "2019-02-15",
+        "unidad": "a0a0a0a1-8015-11ee-b962-0242ac120242",
+        "alumnos": [
+          {
+            "alumno": "Erick Bernal Amparano",
+            "asistencia": true
+          },
+          {
+            "alumno": "Jesus Alejandro Ramirez Cota",
+            "asistencia": true
+          },
+          {
+            "alumno": "Antonio de Jesus Gonzalez Pineda",
+            "asistencia": true
+          },
+          {
+            "alumno": "Marco Antonio Hernandez Peña",
+            "asistencia": true
+          },
+          {
+            "alumno": "Jorge Luis Rivas Vazquez",
+            "asistencia": true
+          },
+          {
+            "alumno": "Roberto Carlos Reyes Fernandez",
+            "asistencia": true
+          }
+        ]
+      }
+    ]
   },
+
   {
-    "_id": 2,
+    "_id": "2",
     "name": "Calidad de Software",
     "color": "secondary"
   },
   {
-    "_id": 3,
+    "_id": "3",
     "name": "Implementación de Prototipos",
     "color": "success"
   },
   {
-    "_id": 4,
+    "_id": "4",
     "name": "Sistemas para el Desarrollo Organizacional",
     "color": "warning"
   },
   {
-    "_id": 5,
+    "_id": "5",
     "name": "Ciencia de Datos",
     "color": "danger"
   },
   {
-    "_id": 6,
+    "_id": "6",
     "name": "Tópicos Web Emergentes",
     "color": "default"
   }
