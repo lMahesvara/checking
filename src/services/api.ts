@@ -26,3 +26,14 @@ export const getCourses = async (userId: string): Promise<Course[]> => {
     return []
   }
 }
+
+export const getCourse = async (courseId: string): Promise<Course> => {
+  try {
+    /* const {data} = await axios.get(`${API_URL}/cursos/curso/${courseId}`)
+    return data */
+    //Using local data while API is not ready
+    return data.find((course: Course) => course._id === courseId)
+  } catch (error) {
+    return {} as Course
+  }
+}
