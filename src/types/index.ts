@@ -9,14 +9,16 @@ export const colors = [
 
 export type color = (typeof colors)[number]
 
+export interface AsistenciaAlumno {
+  alumno: string
+  presente: boolean
+}
+
 export interface Asistencia {
   _id: string
   fecha: string
   unidad: string
-  alumnos: {
-    alumno: string
-    presente: boolean
-  }[]
+  alumnos: AsistenciaAlumno[]
 }
 
 export interface Course {
@@ -33,3 +35,6 @@ export interface Unidad {
   _id: string
   name: string
 }
+
+//export constantes en vez de usar magic numbers
+export const IS_PRESENT = '✔'
