@@ -126,7 +126,21 @@
   {
     "_id": "2",
     "name": "Calidad de Software",
-    "color": "secondary"
+    "color": "secondary",
+    "unidades": [
+      {
+        "_id": "a0a0a0a0-8015-11ee-b962-0242ac112341",
+        "name": "Unidad 1"
+      },
+      {
+        "_id": "a0a0a0a1-8015-11ee-b962-0242ac123422",
+        "name": "Unidad 2"
+      },
+      {
+        "_id": "a0a0a0a2-8015-11ee-b962-0242ac645745",
+        "name": "Unidad 3"
+      }
+    ]
   },
   {
     "_id": "3",
