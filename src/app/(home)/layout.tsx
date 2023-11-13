@@ -1,6 +1,5 @@
 import AsideMenu from '@/components/AsideMenu'
 import Navbar from '@/components/Navbar'
-import { Suspense } from 'react'
 
 export default function DashboardLayout({
   children,
@@ -12,7 +11,9 @@ export default function DashboardLayout({
       <Navbar />
       <div className="flex w-full flex-1 max-w-screen-xl mx-auto">
         <AsideMenu />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 border-r-2 border-gray-500 relative">
+          {children}
+        </main>
       </div>
     </>
   )
