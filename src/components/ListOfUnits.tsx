@@ -1,18 +1,34 @@
-import { Course } from '@/types'
+import { Asistencia, Course } from '@/types'
 import UnitDropdown from './UnitDropdown'
+import { postAsistencia } from '@/services/api'
+import { toast } from 'sonner'
 
 type Props = {
   course: Course
 }
 
 const ListOfUnits = ({ course }: Props) => {
+  const handleAddAsistencia = async (asistencia: Asistencia) => {
+    try {
+      await postAsistencia({ courseId: course._id, asistencia })
+      toast.success('Asistencia agregada')
+      //TODO: Mutate the key to revalidate the data if it's needed
+    } catch (error) {
+      toast.error('No se pudo agregar la asistencia')
+    }
+  }
+
   return course?.unidades?.map(unidad => (
     <section key={unidad._id} className="">
       <div
         className={`flex items-center justify-between border-b-2 border-${course.color} py-2 pl-6 pr-2`}
       >
         <h2 className="font-medium text-3xl line-clamp-1 ">{unidad.name}</h2>
-        <UnitDropdown unitId={unidad._id} color={course.color} />
+        <UnitDropdown
+          handleAddAsistencia={handleAddAsistencia}
+          unitId={unidad._id}
+          color={course.color}
+        />
       </div>
       <ul>
         {course?.asistencias?.map(
