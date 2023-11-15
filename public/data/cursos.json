@@ -3,8 +3,8 @@
     "_id": "1",
     "name": "Métodos Ágiles de Desarrollo de Software",
     "color": "primary",
-    "maestro": "6549e19eee7d7b548cbc6e90",
-    "alumnos": [
+    "teacher": "6549e19eee7d7b548cbc6e90",
+    "students": [
       "Erick Bernal Amparano",
       "Jesus Alejandro Ramirez Cota",
       "Antonio de Jesus Gonzalez Pineda",
@@ -12,7 +12,7 @@
       "Jorge Luis Rivas Vazquez",
       "Roberto Carlos Reyes Fernandez"
     ],
-    "unidades": [
+    "units": [
       {
         "_id": "a0a0a0a0-8015-11ee-b962-0242ac120002",
         "name": "Unidad 1"
@@ -26,97 +26,97 @@
         "name": "Unidad 3"
       }
     ],
-    "asistencias": [
+    "attendances": [
       {
         "_id": "78c54d26-8015-11ee-b962-0242ac120002",
-        "fecha": "2019-02-01",
-        "unidad": "a0a0a0a0-8015-11ee-b962-0242ac120002",
-        "alumnos": [
+        "date": "2019-02-01",
+        "unit": "a0a0a0a0-8015-11ee-b962-0242ac120002",
+        "students": [
           {
-            "alumno": "Erick Bernal Amparano",
-            "asistencia": true
+            "student": "Erick Bernal Amparano",
+            "present": true
           },
           {
-            "alumno": "Jesus Alejandro Ramirez Cota",
-            "asistencia": true
+            "student": "Jesus Alejandro Ramirez Cota",
+            "present": true
           },
           {
-            "alumno": "Antonio de Jesus Gonzalez Pineda",
-            "asistencia": true
+            "student": "Antonio de Jesus Gonzalez Pineda",
+            "present": true
           },
           {
-            "alumno": "Marco Antonio Hernandez Peña",
-            "asistencia": true
+            "student": "Marco Antonio Hernandez Peña",
+            "present": true
           },
           {
-            "alumno": "Jorge Luis Rivas Vazquez",
-            "asistencia": true
+            "student": "Jorge Luis Rivas Vazquez",
+            "present": true
           },
           {
-            "alumno": "Roberto Carlos Reyes Fernandez",
-            "asistencia": true
+            "student": "Roberto Carlos Reyes Fernandez",
+            "present": true
           }
         ]
       },
       {
         "_id": "8aff0c16-8015-11ee-b962-0242ac120002",
-        "fecha": "2019-02-08",
-        "unidad": "a0a0a0a0-8015-11ee-b962-0242ac120002",
-        "alumnos": [
+        "date": "2019-02-08",
+        "unit": "a0a0a0a0-8015-11ee-b962-0242ac120002",
+        "students": [
           {
-            "alumno": "Erick Bernal Amparano",
-            "asistencia": true
+            "student": "Erick Bernal Amparano",
+            "present": true
           },
           {
-            "alumno": "Jesus Alejandro Ramirez Cota",
-            "asistencia": true
+            "student": "Jesus Alejandro Ramirez Cota",
+            "present": true
           },
           {
-            "alumno": "Antonio de Jesus Gonzalez Pineda",
-            "asistencia": true
+            "student": "Antonio de Jesus Gonzalez Pineda",
+            "present": true
           },
           {
-            "alumno": "Marco Antonio Hernandez Peña",
-            "asistencia": true
+            "student": "Marco Antonio Hernandez Peña",
+            "present": true
           },
           {
-            "alumno": "Jorge Luis Rivas Vazquez",
-            "asistencia": true
+            "student": "Jorge Luis Rivas Vazquez",
+            "present": true
           },
           {
-            "alumno": "Roberto Carlos Reyes Fernandez",
-            "asistencia": true
+            "student": "Roberto Carlos Reyes Fernandez",
+            "present": true
           }
         ]
       },
       {
         "_id": "8aff0f0e-8015-11ee-b962-0242ac120002",
-        "fecha": "2019-02-15",
-        "unidad": "a0a0a0a1-8015-11ee-b962-0242ac120242",
-        "alumnos": [
+        "date": "2019-02-15",
+        "unit": "a0a0a0a1-8015-11ee-b962-0242ac120242",
+        "students": [
           {
-            "alumno": "Erick Bernal Amparano",
-            "asistencia": true
+            "student": "Erick Bernal Amparano",
+            "present": true
           },
           {
-            "alumno": "Jesus Alejandro Ramirez Cota",
-            "asistencia": true
+            "student": "Jesus Alejandro Ramirez Cota",
+            "present": true
           },
           {
-            "alumno": "Antonio de Jesus Gonzalez Pineda",
-            "asistencia": true
+            "student": "Antonio de Jesus Gonzalez Pineda",
+            "present": true
           },
           {
-            "alumno": "Marco Antonio Hernandez Peña",
-            "asistencia": true
+            "student": "Marco Antonio Hernandez Peña",
+            "present": true
           },
           {
-            "alumno": "Jorge Luis Rivas Vazquez",
-            "asistencia": true
+            "student": "Jorge Luis Rivas Vazquez",
+            "present": true
           },
           {
-            "alumno": "Roberto Carlos Reyes Fernandez",
-            "asistencia": true
+            "student": "Roberto Carlos Reyes Fernandez",
+            "present": true
           }
         ]
       }
@@ -126,7 +126,21 @@
   {
     "_id": "2",
     "name": "Calidad de Software",
-    "color": "secondary"
+    "color": "secondary",
+    "units": [
+      {
+        "_id": "a0a0a0a0-8015-11ee-b962-0242ac112341",
+        "name": "Unidad 1"
+      },
+      {
+        "_id": "a0a0a0a1-8015-11ee-b962-0242ac123422",
+        "name": "Unidad 2"
+      },
+      {
+        "_id": "a0a0a0a2-8015-11ee-b962-0242ac645745",
+        "name": "Unidad 3"
+      }
+    ]
   },
   {
     "_id": "3",

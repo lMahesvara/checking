@@ -24,7 +24,7 @@ const CourseOverview = ({ course }: Props) => {
         Agregar unidad
       </Button>
 
-      {course.unidades ? (
+      {course.units ? (
         <ListOfUnits course={course} />
       ) : (
         <NotResultsFound
