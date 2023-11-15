@@ -1,4 +1,4 @@
-import { Asistencia, IS_PRESENT } from '@/types'
+import { Attendance, IS_PRESENT } from '@/types'
 import {
   Button,
   Modal,
@@ -9,25 +9,25 @@ import {
 import { UploadCloud } from 'lucide-react'
 import { useRef, useState } from 'react'
 import { toast } from 'sonner'
-import ModalSingleAsistencia from './ModalSingleAsistencia'
+import ModalSingleAttendance from './ModalSingleAttendance'
 import { useReadCSVFiles } from '@/hooks/useReadCSSFiles'
 
 type Props = {
   isOpen: boolean
   onOpenChange: () => void
   unitId: string
-  handleAddAsistencia: (asistencia: Asistencia) => void
+  handleAddAttendance: (attendance: Attendance) => void
   onClose: () => void
 }
 
-const ModalAddAsistencia = ({
+const ModalAddAttendance = ({
   isOpen,
   onOpenChange,
   unitId,
-  handleAddAsistencia,
+  handleAddAttendance,
   onClose,
 }: Props) => {
-  const [asistencia, setAsistencia] = useState({} as Asistencia)
+  const [attendance, setAttendance] = useState({} as Attendance)
 
   const {
     isOpen: isOpenTable,
@@ -37,14 +37,14 @@ const ModalAddAsistencia = ({
   } = useDisclosure()
 
   const processCSVFile = async (csvContent: string) => {
-    let asistencia = {} as Asistencia
+    let attendance = {} as Attendance
 
     // Dividir el contenido del archivo en líneas
     const lines = csvContent.split('\n')
     const date = lines[0].split(' ').at(-1) as string
-    asistencia.fecha = date
-    asistencia.alumnos = []
-    asistencia.unidad = unitId
+    attendance.date = date
+    attendance.students = []
+    attendance.unit = unitId
 
     lines.forEach((line, index) => {
       // Ignorar las primeras 3 líneas, ya que la información de los alumnos empieza en la línea 4
@@ -58,13 +58,13 @@ const ModalAddAsistencia = ({
       const isPresent = data[1]
       //const arrivalTime = data[2]
 
-      asistencia.alumnos.push({
-        alumno: name,
-        presente: isPresent === IS_PRESENT,
+      attendance.students.push({
+        student: name,
+        present: isPresent === IS_PRESENT,
       })
     })
 
-    setAsistencia(asistencia)
+    setAttendance(attendance)
     onOpenTable()
     onClose()
   }
@@ -147,15 +147,15 @@ const ModalAddAsistencia = ({
           )}
         </ModalContent>
       </Modal>
-      <ModalSingleAsistencia
-        asistencia={asistencia}
+      <ModalSingleAttendance
+        attendance={attendance}
         isOpen={isOpenTable}
         onClose={onCloseTable}
         onOpenChange={onOpenChangeTable}
-        handleAddAsistencia={handleAddAsistencia}
+        handleAddAttendance={handleAddAttendance}
       />
     </>
   )
 }
 
-export default ModalAddAsistencia
+export default ModalAddAttendance

@@ -9,29 +9,29 @@ export const colors = [
 
 export type color = (typeof colors)[number]
 
-export interface AsistenciaAlumno {
-  alumno: string
-  presente: boolean
+export interface StudentAttendance {
+  student: string
+  present: boolean
 }
 
-export interface Asistencia {
+export interface Attendance {
   _id: string
-  fecha: string
-  unidad: string
-  alumnos: AsistenciaAlumno[]
+  date: string
+  unit: string
+  students: StudentAttendance[]
 }
 
 export interface Course {
   _id: string
   name: string
   color: color
-  maestro: string
-  alumnos: string[]
-  unidades: Unidad[]
-  asistencias: Asistencia[]
+  teacher: string
+  students: string[]
+  units: Unit[]
+  attendances: Attendance[]
 }
 
-export interface Unidad {
+export interface Unit {
   _id: string
   name: string
 }

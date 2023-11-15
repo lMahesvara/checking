@@ -1,4 +1,4 @@
-import { Asistencia, IS_PRESENT } from '@/types'
+import { Attendance, IS_PRESENT } from '@/types'
 import { useRef, useState } from 'react'
 import { toast } from 'sonner'
 

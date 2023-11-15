@@ -1,4 +1,4 @@
-import { Asistencia, color } from '@/types'
+import { Attendance, color } from '@/types'
 import {
   Button,
   Dropdown,
@@ -8,31 +8,31 @@ import {
   useDisclosure,
 } from '@nextui-org/react'
 import { MoreVertical } from 'lucide-react'
-import ModalAddAsistencia from './modals/ModalAddAsistencia'
+import ModalAddAttendance from './modals/ModalAddAttendance'
 
 type Props = {
   color: color
   unitId: string
-  handleAddAsistencia: (asistencia: Asistencia) => void
-  handleEditUnidad?: () => void
+  handleAddAttendance: (attendance: Attendance) => void
+  handleEditUnit?: () => void
 }
 
 const UnitDropdown = ({
   color,
   unitId,
-  handleAddAsistencia,
-  handleEditUnidad,
+  handleAddAttendance,
+  handleEditUnit,
 }: Props) => {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
 
   return (
     <>
-      <ModalAddAsistencia
+      <ModalAddAttendance
         isOpen={isOpen}
         onClose={onClose}
         onOpenChange={onOpenChange}
         unitId={unitId}
-        handleAddAsistencia={handleAddAsistencia}
+        handleAddAttendance={handleAddAttendance}
       />
 
       <Dropdown placement="bottom">
@@ -42,10 +42,10 @@ const UnitDropdown = ({
           </Button>
         </DropdownTrigger>
         <DropdownMenu aria-label="Unidad Actions" variant="flat">
-          <DropdownItem key="add-asistencia" onPress={onOpen}>
+          <DropdownItem key="add-attendance" onPress={onOpen}>
             Agregar asistencia
           </DropdownItem>
-          <DropdownItem key="edit-unidad">Editar unidad</DropdownItem>
+          <DropdownItem key="edit-unit">Editar unidad</DropdownItem>
         </DropdownMenu>
       </Dropdown>
     </>

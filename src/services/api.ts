@@ -1,6 +1,6 @@
 import axios from 'axios'
 import data from '/public/data/cursos.json'
-import { Asistencia, Course } from '@/types'
+import { Attendance, Course } from '@/types'
 
 const API_URL = process.env.API_URL
 
@@ -38,15 +38,15 @@ export const getCourse = async (courseId: string): Promise<Course> => {
   }
 }
 
-export const postAsistencia = async ({
+export const postAttendance = async ({
   courseId,
-  asistencia,
+  attendance,
 }: {
   courseId: string
-  asistencia: Asistencia
+  attendance: Attendance
 }): Promise<void> => {
   try {
-    /* await axios.post(`${API_URL}/cursos/curso/${courseId}/asistencia`, {
+    /* await axios.post(`${API_URL}/attendance`, {
       asistencia,
     }) */
     //Using local data while API is not ready

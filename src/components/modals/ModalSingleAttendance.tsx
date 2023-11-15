@@ -1,4 +1,4 @@
-import { Asistencia } from '@/types'
+import { Attendance } from '@/types'
 import {
   Button,
   Modal,
@@ -20,29 +20,29 @@ import { useEffect, useState } from 'react'
 type Props = {
   isOpen: boolean
   onOpenChange: () => void
-  handleAddAsistencia?: (asistencia: Asistencia) => void
+  handleAddAttendance?: (attendance: Attendance) => void
   onClose: () => void
-  asistencia: Asistencia
+  attendance: Attendance
   isReadOnly?: boolean
 }
 
 const columns = [
   {
-    key: 'alumno',
+    key: 'student',
     label: 'Nombre',
   },
   {
-    key: 'asistencia',
+    key: 'attendance',
     label: 'Asistencia',
   },
 ]
 
-const ModalSingleAsistencia = ({
+const ModalSingleAttendance = ({
   isOpen,
   onClose,
   onOpenChange,
-  asistencia,
-  handleAddAsistencia,
+  attendance: attendance,
+  handleAddAttendance,
   isReadOnly = false,
 }: Props) => {
   const [isLoading, setIsLoading] = useState(true)
@@ -50,15 +50,15 @@ const ModalSingleAsistencia = ({
   let list = useAsyncList({
     load() {
       const rows =
-        asistencia?.alumnos
-          ?.map(alumno => {
+        attendance?.students
+          ?.map(student => {
             return {
-              key: alumno.alumno,
-              alumno: alumno.alumno,
-              asistencia: alumno.presente ? 'Presente' : 'Ausente',
+              key: student.student,
+              student: student.student,
+              attendance: student.present ? 'Presente' : 'Ausente',
             }
           })
-          .toSorted((a, b) => (a.alumno > b.alumno ? 1 : -1)) ?? []
+          .toSorted((a, b) => (a.student > b.student ? 1 : -1)) ?? []
       setIsLoading(false)
       return { items: rows }
     },
@@ -87,7 +87,7 @@ const ModalSingleAsistencia = ({
       setIsLoading(false)
     }
     reload()
-  }, [asistencia])
+  }, [attendance])
 
   return (
     <Modal
@@ -97,15 +97,15 @@ const ModalSingleAsistencia = ({
       size="xl"
       aria-label={
         isReadOnly
-          ? `Asistencia de la fecha ${asistencia.fecha}`
-          : `Agregar asistencia de la fecha ${asistencia.fecha}`
+          ? `Asistencia de la fecha ${attendance.date}`
+          : `Agregar asistencia de la fecha ${attendance.date}`
       }
     >
       <ModalContent>
         {onClose => (
           <>
             <ModalHeader className="text-center">
-              Asistencia - {asistencia.fecha}
+              Asistencia - {attendance.date}
             </ModalHeader>
             <Table
               isStriped
@@ -113,7 +113,7 @@ const ModalSingleAsistencia = ({
               onSortChange={list.sort}
               isHeaderSticky
               radius="none"
-              aria-label={`Asistencia de la fecha ${asistencia.fecha}`}
+              aria-label={`Asistencia de la fecha ${attendance.date}`}
             >
               <TableHeader columns={columns}>
                 {column => (
@@ -144,7 +144,7 @@ const ModalSingleAsistencia = ({
                 <Button
                   color="primary"
                   onPress={() => {
-                    handleAddAsistencia?.(asistencia)
+                    handleAddAttendance?.(attendance)
                     onClose()
                   }}
                 >
@@ -158,4 +158,4 @@ const ModalSingleAsistencia = ({
     </Modal>
   )
 }
-export default ModalSingleAsistencia
+export default ModalSingleAttendance
