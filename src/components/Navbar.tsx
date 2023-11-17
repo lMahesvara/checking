@@ -12,14 +12,17 @@ import {
 
 import { Button } from '@nextui-org/button'
 import { PlusSquare } from 'lucide-react'
+import { useDisclosure } from '@nextui-org/react'
 import AsideMenuMobile from './AsideMenuMobile'
 import UserDropdown from './UserDropdown'
 import NavbarTitle from './NavbarTitle'
+import CreateCourseModal from './CreateCourseModal'
 
 type Props = {}
 
 export default function Navbar({}: Props) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
   return (
     <NavbarNUI
@@ -49,10 +52,11 @@ export default function Navbar({}: Props) {
             color="secondary"
             placement="bottom"
           >
-            <Button variant="light" size="lg" radius="full" isIconOnly>
+            <Button variant="light" size="lg" radius="full" isIconOnly onClick={onOpen}>
               <PlusSquare className="w-8 h-8" />
             </Button>
           </Tooltip>
+          <CreateCourseModal isOpen={isOpen} onOpenChange={onOpenChange} />
         </NavbarItem>
         <NavbarItem>
           <UserDropdown />
