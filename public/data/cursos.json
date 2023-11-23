@@ -90,9 +90,164 @@
         ]
       },
       {
-        "_id": "8aff0f0e-8015-11ee-b962-0242ac120002",
+        "_id": "8aff0f0e-8015-11ee-b962-0242ac121002",
         "date": "2019-02-15",
         "unit": "a0a0a0a1-8015-11ee-b962-0242ac120242",
+        "students": [
+          {
+            "student": "Erick Bernal Amparano",
+            "present": true
+          },
+          {
+            "student": "Jesus Alejandro Ramirez Cota",
+            "present": true
+          },
+          {
+            "student": "Antonio de Jesus Gonzalez Pineda",
+            "present": true
+          },
+          {
+            "student": "Marco Antonio Hernandez Peña",
+            "present": true
+          },
+          {
+            "student": "Jorge Luis Rivas Vazquez",
+            "present": true
+          },
+          {
+            "student": "Roberto Carlos Reyes Fernandez",
+            "present": true
+          }
+        ]
+      },
+      {
+        "_id": "8aff0f0e-8015-11ee-b962-0242ac122002",
+        "date": "2019-02-22",
+        "unit": "a0a0a0a1-8015-11ee-b962-0242ac120242",
+        "students": [
+          {
+            "student": "Erick Bernal Amparano",
+            "present": true
+          },
+          {
+            "student": "Jesus Alejandro Ramirez Cota",
+            "present": true
+          },
+          {
+            "student": "Antonio de Jesus Gonzalez Pineda",
+            "present": true
+          },
+          {
+            "student": "Marco Antonio Hernandez Peña",
+            "present": true
+          },
+          {
+            "student": "Jorge Luis Rivas Vazquez",
+            "present": true
+          },
+          {
+            "student": "Roberto Carlos Reyes Fernandez",
+            "present": true
+          }
+        ]
+      },
+      {
+        "_id": "8aff0f0e-8015-11ee-b962-0242ac123002",
+        "date": "2019-03-01",
+        "unit": "a0a0a0a2-8015-11ee-b962-0242ac121322",
+        "students": [
+          {
+            "student": "Erick Bernal Amparano",
+            "present": true
+          },
+          {
+            "student": "Jesus Alejandro Ramirez Cota",
+            "present": true
+          },
+          {
+            "student": "Antonio de Jesus Gonzalez Pineda",
+            "present": true
+          },
+          {
+            "student": "Marco Antonio Hernandez Peña",
+            "present": true
+          },
+          {
+            "student": "Jorge Luis Rivas Vazquez",
+            "present": true
+          },
+          {
+            "student": "Roberto Carlos Reyes Fernandez",
+            "present": true
+          }
+        ]
+      },
+      {
+        "_id": "8aff0f0e-8015-11ee-b962-0242ac124002",
+        "date": "2019-03-08",
+        "unit": "a0a0a0a2-8015-11ee-b962-0242ac121322",
+        "students": [
+          {
+            "student": "Erick Bernal Amparano",
+            "present": true
+          },
+          {
+            "student": "Jesus Alejandro Ramirez Cota",
+            "present": true
+          },
+          {
+            "student": "Antonio de Jesus Gonzalez Pineda",
+            "present": true
+          },
+          {
+            "student": "Marco Antonio Hernandez Peña",
+            "present": true
+          },
+          {
+            "student": "Jorge Luis Rivas Vazquez",
+            "present": true
+          },
+          {
+            "student": "Roberto Carlos Reyes Fernandez",
+            "present": true
+          }
+        ]
+      },
+      {
+        "_id": "8aff0f0e-8015-11ee-b962-0242ac120502",
+        "date": "2019-03-15",
+        "unit": "a0a0a0a2-8015-11ee-b962-0242ac121322",
+        "students": [
+          {
+            "student": "Erick Bernal Amparano",
+            "present": true
+          },
+          {
+            "student": "Jesus Alejandro Ramirez Cota",
+            "present": true
+          },
+          {
+            "student": "Antonio de Jesus Gonzalez Pineda",
+            "present": true
+          },
+          {
+            "student": "Marco Antonio Hernandez Peña",
+            "present": true
+          },
+          {
+            "student": "Jorge Luis Rivas Vazquez",
+            "present": false
+          },
+          {
+            "student": "Roberto Carlos Reyes Fernandez",
+            "present": true
+          }
+        ]
+      },
+      {
+        "_id": "8aff0f0e-8015-11ee-b962-0242ac126002",
+        "date": "2019-03-22",
+        "unit": "a0a0a0a2-8015-11ee-b962-0242ac121322",
         "students": [
           {
             "student": "Erick Bernal Amparano",

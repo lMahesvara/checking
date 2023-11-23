@@ -38,3 +38,10 @@ export interface Unit {
 
 //export constantes en vez de usar magic numbers
 export const IS_PRESENT = '✔'
+export const IS_ABSENT = '✘'
+
+export interface AttendanceTableEntry {
+  key: string
+  student: string
+  [date: string]: string
+}

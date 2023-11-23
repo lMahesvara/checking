@@ -2,6 +2,8 @@
 import { Course } from '@/types'
 import { Tab, Tabs } from '@nextui-org/tabs'
 import CourseOverview from './sections/CourseOverview'
+import CourseDashboard from './sections/CourseDashboard'
+import CourseStudents from './sections/CourseStudents'
 
 type Props = {
   course: Course
@@ -19,8 +21,12 @@ const CourseTabs = ({ course }: Props) => {
       <Tab key="overview" title="Vista general">
         <CourseOverview course={course} />
       </Tab>
-      <Tab key="dashboard" title="Dashboard" />
-      <Tab key="students" title="Alumnos" />
+      <Tab key="dashboard" title="Dashboard">
+        <CourseDashboard course={course} />
+      </Tab>
+      <Tab key="students" title="Alumnos">
+        <CourseStudents course={course} />
+      </Tab>
     </Tabs>
   )
 }

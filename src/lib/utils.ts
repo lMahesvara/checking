@@ -14,3 +14,17 @@ export const pickRandomColor = () =>
   colors[Math.floor(Math.random() * colors.length)]
 
 export const getFirstLetter = (str: string) => str.charAt(0).toUpperCase()
+
+export const getShortDate = (str: string) => {
+  const [year, month, day] = str.split('-').map(Number)
+  const date = new Date(year, month - 1, day)
+  return date.toLocaleString('es-mx', {
+    timeZone: 'America/hermosillo',
+    month: 'short',
+    day: 'numeric',
+  })
+}
+
+export function capitalize(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}

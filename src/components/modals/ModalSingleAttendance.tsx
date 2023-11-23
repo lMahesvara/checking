@@ -1,3 +1,4 @@
+import { columnsSingleAttendance } from '@/config/attendance'
 import { Attendance } from '@/types'
 import {
   Button,
@@ -26,20 +27,8 @@ type Props = {
   isReadOnly?: boolean
 }
 
-const columns = [
-  {
-    key: 'student',
-    label: 'Nombre',
-  },
-  {
-    key: 'attendance',
-    label: 'Asistencia',
-  },
-]
-
 const ModalSingleAttendance = ({
   isOpen,
-  onClose,
   onOpenChange,
   attendance: attendance,
   handleAddAttendance,
@@ -115,7 +104,7 @@ const ModalSingleAttendance = ({
               radius="none"
               aria-label={`Asistencia de la fecha ${attendance.date}`}
             >
-              <TableHeader columns={columns}>
+              <TableHeader columns={columnsSingleAttendance}>
                 {column => (
                   <TableColumn key={column.key} allowsSorting>
                     {column.label}
