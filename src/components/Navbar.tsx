@@ -56,7 +56,7 @@ export default function Navbar({}: Props) {
               <PlusSquare className="w-8 h-8" />
             </Button>
           </Tooltip>
-          <CreateCourseModal isOpen={isOpen} onOpenChange={onOpenChange} />
+          <CreateCourseModal isOpen={isOpen} onOpenChange={onOpenChange} type="create" />
         </NavbarItem>
         <NavbarItem>
           <UserDropdown />
