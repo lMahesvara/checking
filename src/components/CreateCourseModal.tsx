@@ -3,14 +3,17 @@ import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, Input}
 import { useSession } from "next-auth/react";
 import { pickRandomColor } from "@/lib/utils";
 import { toast } from "sonner";
+import { Course } from '@/types'
 
 
 type Props = {
-    onOpenChange: () => void,
-    isOpen: boolean | undefined
-}
+  isOpen: boolean;
+  onOpenChange: () => void;
+  type: "create" | "edit";
+  course?: Course; 
+};
 
-function CreateCourseModal({isOpen, onOpenChange}: Props) {
+function CreateCourseModal({isOpen, onOpenChange, type, course}: Props) {
 
     const session = useSession();
 
@@ -28,6 +31,7 @@ function CreateCourseModal({isOpen, onOpenChange}: Props) {
             color: pickRandomColor()
         }
         try{
+
             //TODO Realizar petición a back para crear curso
             toast.success("Curso Registrado!")
         } catch(error){
@@ -47,7 +51,7 @@ function CreateCourseModal({isOpen, onOpenChange}: Props) {
             {(onClose) => (
               <>
                 <form onSubmit={handleOnSubmit}>
-                    <ModalHeader className="flex flex-col gap-1">Crear Curso</ModalHeader>
+                    <ModalHeader className="flex flex-col gap-1">{type==="edit" ? "Editar Curso": "Crear Curso" }</ModalHeader>
                     <ModalBody>
                     <Input
                         autoFocus
@@ -55,6 +59,7 @@ function CreateCourseModal({isOpen, onOpenChange}: Props) {
                         placeholder="Introduzca el nombre del curso"
                         name="name"
                         variant="bordered"
+                        value={type==="edit" ? course?.name: "" }
                     />
                     </ModalBody>
                     <ModalFooter>
@@ -62,7 +67,7 @@ function CreateCourseModal({isOpen, onOpenChange}: Props) {
                         Salir
                     </Button>
                     <Button type="submit" color="primary" onPress={onClose}>
-                        Crear
+                      {type==="edit" ? "Realizar Cambios": "Crear" }
                     </Button>
                     </ModalFooter>
                 </form>
